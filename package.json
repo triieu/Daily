@@ -1,0 +1,19 @@
+{
+  "name": "daily-to-do",
+  "productName": "daily",
+  "version": "1.0.0",
+  "description": "a simple everyday to-do list",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electon": "^0.0.1-security"
+  },
+  "dependencies": {
+    "electron": "^37.2.3"
+  }
+}

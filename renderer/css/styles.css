@@ -1,0 +1,150 @@
+html, body, .container {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  app-region: no-drag;
+  display: flex;
+  flex-direction: column;
+}
+
+.titlebar {
+  height: 30px;
+  background: #7c1c1c;
+  color: #faf5ed;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10px;
+  app-region: drag;
+  user-select: none;
+}
+.container {
+  flex-grow: 1;
+  overflow: hidden;
+  background: #faf5ed;
+}
+.quote {
+  color: #7c1c1c;
+  text-align: center;
+  background-color: #acbda180;
+  padding: 0.5em;
+  margin: 0 auto;
+  border-radius: 1em;
+  width: 80vw;
+  box-sizing: border-box;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1.5em;
+  transition: 0.2s ease;
+  color: #7c1c1c;
+  font-weight: bold;
+  font-size: 25px;
+}
+#add-task-btn {
+  width: 25px;
+  height: 25px;
+  background-image: url(../assets/add-red.png);
+  background-size: contain;
+  border: none;
+  border-radius: 5px;
+}
+#add-task-btn:hover {
+  background-color: darkgray;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  app-region: drag;
+  z-index: 1000;
+}
+.modal-content {
+  background-color: #fefefe;
+  padding: 2em;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 300px;
+  max-width: 300px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  app-region: no-drag;
+  animation: fadeInScale 0.3s ease-out;
+  border-bottom: 5px solid #acbda180;
+}
+/* animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 0.5em;
+  right: 0.75em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.tasklist-container {
+  background: #acbda180;
+  width: 80vw;
+  max-width: 100vw;
+  min-height: 100px;
+  max-height: 100vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-top: 1em;
+  border-radius: 1em;
+  flex-grow: 1;
+  margin-bottom: 1em;
+}
+li {
+  cursor: pointer;
+  position: relative;
+}
+li.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+  cursor: pointer;
+}
+.delete-btn {
+  display: none;
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+  border: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  background-color: transparent;
+  border-radius: 2px;
+  background-image: url(../assets/close-red.png);
+  background-size: contain;
+}
+li:hover .delete-btn {
+  display: inline;
+  opacity: 1;
+}

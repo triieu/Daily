@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>daily</title>
+</head>
+<body>
+    <div class="titlebar">to-do list</div>
+    
+    <div class="container">
+        <h1 class="quote">"today will be a great day."</h1>
+        <div class="task-card">
+            <span class="task-text">t a s k s</span>
+            <button id="add-task-btn"></button>
+        </div>
+
+        <div id="taskModal" class="modal">
+            <div class="modal-content">
+                <input id="modalInput" placeholder="What do you need to do?" />
+                <button id="saveTask">Save</button>
+                <span id="close" class="close">&times;</span>
+            </div>
+
+        </div>
+
+        <div class="tasklist-container">
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+
+    <script src="js/renderer.js"></script>
+</body>
+</html>
