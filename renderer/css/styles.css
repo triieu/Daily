@@ -8,7 +8,7 @@ html, body, .container {
 }
 
 .titlebar {
-  height: 30px;
+  height: 34px;
   background: #7c1c1c;
   color: #faf5ed;
   display: flex;
@@ -18,12 +18,25 @@ html, body, .container {
   app-region: drag;
   user-select: none;
 }
+
+#toggle-theme {
+  background-image: url(../assets/sun-yellow.png);
+  height: 25px;
+  width: 25px;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+  position: absolute;
+  right: 5px;
+  top: 2.5em;
+}
 .container {
   flex-grow: 1;
   overflow: hidden;
   background: #faf5ed;
 }
-.quote {
+#quote {
   color: #7c1c1c;
   text-align: center;
   background-color: #acbda180;
@@ -32,8 +45,12 @@ html, body, .container {
   border-radius: 1em;
   width: 80vw;
   box-sizing: border-box;
-  margin-top: 1em;
+  margin-top: 1.25em;
   margin-bottom: 1em;
+}
+#quote[contenteditable="true"]:focus {
+  outline: 1px solid #7895b2;
+  border-radius: 1em;
 }
 .task-card {
   display: flex;
@@ -51,6 +68,7 @@ html, body, .container {
   background-size: contain;
   border: none;
   border-radius: 5px;
+  background-color: transparent;
 }
 #add-task-btn:hover {
   background-color: darkgray;
@@ -147,4 +165,66 @@ li.completed {
 li:hover .delete-btn {
   display: inline;
   opacity: 1;
+}
+
+/* dark mode */
+.dark-mode {
+  background-color: #242833;
+  color: white;
+}
+
+.dark-mode .container {
+  background: #242833;
+}
+
+.dark-mode .titlebar {
+  background: #4e6773;
+  color: #03DAC6;
+}
+
+.dark-mode #toggle-theme {
+  background-image: url(../assets/moon-white.png);
+}
+
+.dark-mode #quote {
+  background-color: #4e6773;
+  color: #ffffff;
+}
+
+.dark-mode .task-card {
+  color: #03DAC6;
+}
+
+.dark-mode #add-task-btn {
+  background-image: url(../assets/add-cyan.png);
+}
+.dark-mode #add-task-btn:hover {
+  background-color: #555;
+}
+
+.dark-mode .modal-content {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #eee;
+}
+
+.dark-mode .close {
+  color: #ccc;
+}
+
+.dark-mode .close:hover,
+.dark-mode .close:focus {
+  color: white;
+}
+
+.dark-mode .tasklist-container {
+  background: #4e6773;
+}
+
+.dark-mode li.completed {
+  color: #aaa;
+}
+
+.dark-mode .delete-btn {
+  background-image: url(../assets/close-cyan.png);
 }

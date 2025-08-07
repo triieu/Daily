@@ -3,11 +3,11 @@ const isMac = process.platform === 'darwin';
 const { app, BrowserWindow } = require('electron');
 
 const { ipcMain } = require('electron');
-const { loadTasks, saveTasks } = require('./renderer/js/taskHandler.js');
+const { loadData, saveData } = require('./renderer/js/handler.js');
 
-ipcMain.handle('loadTasks', () => loadTasks());
-ipcMain.handle('saveTasks', (event, tasks) => {
-    saveTasks(tasks);
+ipcMain.handle('loadData', () => loadData());
+ipcMain.handle('saveData', (event, data) => {
+    saveData(data);
     return { success: true};
 })
 
